@@ -1,0 +1,36 @@
+!!! 5
+html(lang='en')
+	head
+		title pl 
+		meta(http-equiv="Content-Type", content="application/xhtml+xml; charset=utf-8")
+		meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+		meta(name="apple-mobile-web-app-capable", content="yes")
+		meta(name="apple-mobile-web-app-status-bar-style", content="black")
+		link(rel="stylesheet", type="text/css", href="/bootstrap/css/bootstrap.min.css")
+		link(rel="stylesheet", type="text/css", href="/bootstrap/css/bootstrap-responsive.min.css")
+		link(rel="stylesheet", type="text/css", href="/partygate/css/partygate.css")
+		script(type="text/javascript", src="http://code.jquery.com/jquery.js")
+		script(type="text/javascript", src="http://d3js.org/d3.v3.min.js")
+		script(type="text/javascript", src="/bootstrap/js/bootstrap.min.js")
+	style
+		body 
+		{
+		background-image: url('#{backgroundUrl}');
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+		background-attachment: fixed;
+		} 
+	body
+		.navbar.navbar-inverse.navbar-fixed-top
+			.navbar-inner
+				.container
+					button.btn.btn-navbar pl
+		.container
+			#page
+				h3 #{partyTitle}
+				#form
+	script
+		var size = #{formSize};
+		
+
+

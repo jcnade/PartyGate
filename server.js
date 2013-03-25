@@ -53,8 +53,23 @@ app.configure(function () {
 /**********************************************************************************/
 
 app.get('/', function(req, res){
-  res.send('Hello World');
+  res.send('Party Gate Server v1');
 });
+
+
+app.get('/party/:partyTAG', function(req, res){
+	// And print
+   res.render('party_public_page', get_party_info(req.params.partyTAG) );
+});
+
+
+app.get('/party/registration/:partyTAG', function(req, res){
+	// And print
+	var partyData = get_party_info(req.params.partyTAG);
+	partyData['formSize']	= partyData.form.length;
+   res.render('party_registration_page', partyData );
+});
+
 
 
 //app.listen(5005);
@@ -62,5 +77,129 @@ app.get('/', function(req, res){
 http.createServer(app).listen(app.get('port'), function(){
   logger.info(" * Starting listening on port " + app.get('port'));
 });
+
+
+/**********************************************************************************/
+
+function partyData2htmlform(partyData) {
+
+	var form = 'form'+ String.fromCharCode(13);
+
+	for (var i in partyData) {
+		console.log(i);
+		
+		if (partyData[i].type == 'text') {
+			form += "\n\t"+"input(type=text)"+ String.fromCharCode(13);
+		}
+
+	}
+	return form;
+}
+
+
+function get_party_info(partyID) {
+
+	var decom =  [];
+
+	decom['decom2013'] = {
+			  _id : 'decom2013'
+			, partyTitle : "Brussels Decompression 2013"
+			, partyDescription : "Burners from Belgium are pleased to invite you to our first Brussels Burning Man Decompression®.The purpose of Decompression is to give Burning Man participants  the opportunity to re-capture the spirit of Burning Man by bringing them together with the art, music and exceptional people of the event. It is also an opportunity to introduce new people to burner culture."
+			, backgroundUrl: 'http://2.bp.blogspot.com/-gQdn8R_wjUA/TlcruoDwCCI/AAAAAAABDAY/9PxjGlyur2k/s1600/Burning+Man+2010-6806.jpg'
+			, ticketLimit: 80
+			, form: [
+						{ 
+							id: 'email',
+							label: 'Email',
+							type: 'text',
+							size: '64',
+							placeholder: 'your email adress',
+						},
+						{ 
+							id: 'name',
+							label: 'PlayaName',
+							type: 'text',
+							size: '64',
+							placeholder: 'Playa Name / Nick Name',
+						},
+						{ 
+							id: 'phone',
+							label: 'Phone Number',
+							type: 'text',
+							size: '64',
+							placeholder: 'Your Phone Number',
+						},
+						{ 
+							id: 'burningman',
+							label: 'Did you already participated to Burning Man festival ?',
+							type: 'checkbox',
+							size: '64',
+							placeholder: 'Your Phone Number',
+						},
+						{ 
+							id: 'burningman',
+							label: 'Did you already participated to  urning Man regional event ?',
+							type: 'checkbox',
+							size: '64',
+							placeholder: 'Your Phone Number',
+						}
+				]
+	};
+
+	decom['decom2013staff'] = {
+			 _id : 'decom2013staff'
+			, partyTitle : "Brussels Decompression 2013"
+			, partyDescription : "Burners from Belgium are pleased to invite you to our first Brussels Burning Man Decompression®.The purpose of Decompression is to give Burning Man participants  the opportunity to re-capture the spirit of Burning Man by bringing them together with the art, music and exceptional people of the event. It is also an opportunity to introduce new people to burner culture."
+			, backgroundUrl: 'http://2.bp.blogspot.com/-gQdn8R_wjUA/TlcruoDwCCI/AAAAAAABDAY/9PxjGlyur2k/s1600/Burning+Man+2010-6806.jpg'
+			, ticketLimit: 20
+			, form: [
+						{ 
+							id: 'email',
+							label: 'Email',
+							type: 'text',
+							size: '64',
+							placeholder: 'your email adress',
+						},
+						{ 
+							id: 'name',
+							label: 'PlayaName',
+							type: 'text',
+							size: '64',
+							placeholder: 'Playa Name / Nick Name',
+						},
+						{ 
+							id: 'phone',
+							label: 'Phone Number',
+							type: 'text',
+							size: '64',
+							placeholder: 'Your Phone Number',
+						},
+						{ 
+							id: 'burningman',
+							label: 'Did you already participated to Burning Man festival ?',
+							type: 'checkbox',
+							size: '64',
+							placeholder: 'Your Phone Number',
+						},
+						{ 
+							id: 'burningman',
+							label: 'Did you already participated to  urning Man regional event ?',
+							type: 'checkbox',
+							size: '64',
+							placeholder: 'Your Phone Number',
+						}
+					]
+	};
+
+	return decom[partyID];
+
+}
+
+
+
+
+
+
+
 
 
