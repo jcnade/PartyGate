@@ -1,2 +1,13 @@
 SERVER:
    port: 5000
+
+MONGO:
+   host: 127.0.0.1
+   port: 27017
+   autoReconnect: true
+   writeAcknowlegement: 'majority'
+   flushToJournalBeforeAcknowlegement: true
+   flushToFileSystemBeforeAcknowlegement: true
+   safe: true
+   collection: 'parties'
+   database: 'partygate'

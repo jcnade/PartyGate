@@ -49,6 +49,49 @@ app.configure(function () {
     app.use(express.static(path.join(__dirname, 'public')));
 });
 
+/***********************************************************************************
+ *
+ * Mongo Connection
+ *
+ ***********************************************************************************/
+
+
+/**********************************************************************************************************************
+ * MongoDB connection
+ **********************************************************************************************************************/
+
+logger.info("Connecting with MongoDB", JSON.stringify(config.mongo));
+
+var mongoServer = new mongo.Server( config.MONGO.host, 
+									config.MONGO.port, {
+										auto_reconnect: config.MONGO.autoReconnect,
+										w:config.MONGO.writeAcknowlegement,
+										journal:config.MONGO.flushToJournalBeforeAcknowlegement,
+										fsync:config.MONGO.flushToFileSystemBeforeAcknowlegement
+									});
+
+var mongoDb = new mongo.Db(config.MONGO.database, mongoServer, {
+    safe: config.MONGO.safe
+});
+
+var mongoStatus = false;
+var partyDB;
+
+mongoDb.open(function (err, db) {
+    if (err) {
+    
+    	// Negatif, no mongo to use over there
+        logger.error('Unable to use the "' + config.MONGO.database + '" database on MongoDB', err);
+    } else {
+    
+    	// yes, We got out database pointer
+        partyDB = db;
+        mongoStatus = true;
+        logger.info("Connected with the MongoDB database '" + config.MONGO.database + "'");
+    }
+});
+
+
 
 /**********************************************************************************/
 
@@ -73,6 +116,55 @@ app.get('/party/registration/:partyTAG', function(req, res){
 	partyData['formSize']	= partyData.form.length;
 	
    res.render('party_registration_page', partyData );
+});
+
+
+
+
+app.post('/party/registration/:partyTAG', function(req, res){
+	// And print
+	var partyData 			= get_party_info(req.params.partyTAG);
+	partyData['title'] 		= partyData['partyTitle'];
+	partyData['formSize']	= partyData.form.length;
+
+	// Building a password
+	var field1 = [ 'burning','hot','happy','dusty','red','blue','pinky','faster'];
+	var field2 = [ 'temple','camp','fire','water','bacon','playa','camp','hippie','ravers','rainbow'];
+	var randomWord1 = field1[Math.floor(Math.random()* field1.length )];
+	var randomWord2 = field2[Math.floor(Math.random()* field2.length )];
+	req.body['password'] = partyData['ticketLimit']+'-'+randomWord1+'-'+randomWord2;
+
+
+	console.log(req.body);
+	
+    partyDB.collection(config.MONGO.collection, function (err, col) {
+        if (err) {
+        
+        	// fail
+            logger.error("Can't find the images collection", err);
+            mongoStatus = false;
+            res.header('Content-type', "application/json");
+            res.header('Access-Control-Allow-Origin', '*');
+            res.send([]);
+
+        } else {
+
+        	// Yes
+        	col.insert( req.body, {w:1}, function (err, docs) {
+                if (err) {
+                    logger.error("OUps ", err);
+                    mongoStatus = false;
+                    docs = [];
+                }
+                res.header('Content-type', "application/json");
+                res.header('Access-Control-Allow-Origin', '*');
+                res.send(docs);
+            });
+        }
+    });
+	
+
+	//res.render('party_registration_page', partyData );
 });
 
 

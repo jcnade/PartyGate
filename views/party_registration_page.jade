@@ -28,15 +28,15 @@ html(lang='en')
 		.container
 			#page
 				h3 #{partyTitle}
-				form
+				form(method='POST', action='/party/registration/#{_id}')
 					fieldset
 						legend Ticket registration
 
 						label Playa Name
-						input(type='text',placeholder='Nick Name / Playa name')
+						input(type='text',, name='name', placeholder='Nick Name / Playa name')
 
 						label Email
-						input(type='text',placeholder='email')
+						input(type='text', name='email',placeholder='email')
 
 						label Quick Survey
 
@@ -45,17 +45,20 @@ html(lang='en')
 							span I'm a virgin Burner
 
 						label.checkbox
-							input(type='checkbox', name='virgin', value=true)
+							input(type='checkbox', name='veteran', value=true)
 							span I'm a veteran Burner
 
 						label.checkbox
-							input(type='checkbox', name='virgin', value=true)
+							input(type='checkbox', name='bm2013', value=true)
 							span I will go at Burning Man 2013 (Cargo Cult)
 
 						label.checkbox
-							input(type='checkbox', name='bm2013', value=true)
+							input(type='checkbox', name='nowhere2013', value=true)
 							span I will go at Nowhere Art festival 2013 (in Spain)
 
+						label.checkbox
+							input(type='checkbox', name='bmforeigner', value=true)
+							span I come from a foreign country that Belgium
 
 						button(type='submit').btn  Save
 
