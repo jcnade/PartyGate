@@ -132,11 +132,20 @@ app.post('/party/registration/:partyTAG', function(req, res){
 	var field2 = [ 'temple','camp','fire','water','bacon','playa','camp','hippie','ravers','rainbow'];
 	var randomWord1 = field1[Math.floor(Math.random()* field1.length )];
 	var randomWord2 = field2[Math.floor(Math.random()* field2.length )];
-	req.body['password'] = partyData['ticketLimit']+'-'+randomWord1+'-'+randomWord2;
-
-
-	console.log(req.body);
+	var partyCode = partyData['ticketLimit']+'-'+randomWord1+'-'+randomWord2;
 	
+	req.body['partyCode']	= partyCode;
+	partyData['partyCode']	= partyCode;
+	partyData['partyTAG']	= req.params.partyTAG;
+	partyData['email']	    = req.body['email'];
+
+
+	soHowManyRegistrationWeGotForThatParty(req.params.partyTAG,function(howmany){
+		console.log('howmany',howmany);
+	});
+
+
+	// update
     partyDB.collection(config.MONGO.collection, function (err, col) {
         if (err) {
         
@@ -150,22 +159,18 @@ app.post('/party/registration/:partyTAG', function(req, res){
         } else {
 
         	// Yes
-        	col.insert( req.body, {w:1}, function (err, docs) {
+        	col.update( { email: req.body.email }, { $set: req.body }, {upsert:true}, function (err, docs) {
                 if (err) {
                     logger.error("OUps ", err);
                     mongoStatus = false;
                     docs = [];
                 }
-                res.header('Content-type', "application/json");
-                res.header('Access-Control-Allow-Origin', '*');
-                res.send(docs);
+                res.render('party_thanks', partyData );
             });
         }
     });
-	
-
-	//res.render('party_registration_page', partyData );
 });
+
 
 
 
@@ -294,8 +299,33 @@ function get_party_info(partyID) {
 
 
 
+function soHowManyRegistrationWeGotForThatParty(partyTAG,callback) {
 
+    partyDB.collection(config.MONGO.collection, function (err, col) {
+        if (err) {
+        
+        	// fail
+            logger.error("Can't find the images collection", err);
+            mongoStatus = false;
+            res.header('Content-type', "application/json");
+            res.header('Access-Control-Allow-Origin', '*');
+            res.send([]);
 
+        } else {
+
+        	// Yes
+        	col.count( { partyTAG: partyTAG }, function (err, docs) {
+                if (err) {
+                    logger.error("OUps ", err);
+                    mongoStatus = false;
+                    docs = [];
+                }
+                callback(docs);
+            });
+        }
+    });
+
+}
 
 
 
