@@ -181,67 +181,77 @@ app.post('/party/registration/:partyTAG', function(req, res){
 
 	console.log('ok')
 
-	reduceOneTicket( req.params.partyTAG ,function(data){
-	
-		console.log('minus', data);
-	});
-	
-/*
 	// get party Date in mongo
 	get_party_info(req.params.partyTAG,function(partyData){
+
+
+	if ( partyData[0]['ticketLimit'] > 1) {
+
+		//
+		// Make a new ticket
+		//
+		console.log(partyData);
+		console.log('ok');
+		reduceOneTicket( req.params.partyTAG ,function(data){
+
+			//
+			// And print The Password page
+			//
+			partyData[0]['title'] 		= partyData[0]['partyTitle'];
+			// Building a password
+			var field1 = [ 'burning','hot','happy','dusty','red','blue','pinky','faster'];
+			var field2 = [ 'temple','camp','fire','water','bacon','playa','camp','hippie','ravers','rainbow'];
+			var randomWord1 = field1[Math.floor(Math.random()* field1.length )];
+			var randomWord2 = field2[Math.floor(Math.random()* field2.length )];
+			var partyCode = partyData[0]['ticketLimit']+'-'+randomWord1+'-'+randomWord2;
+			// data to save
+			req.body['partyCode']	= partyCode;
+			// data to print
+			partyData[0]['partyCode']	= partyCode;
+			partyData[0]['partyTAG']	= req.params.partyTAG;
+			partyData[0]['email']	    = req.body['email'];
+			// save info
+			partyDB.collection('registration', function (err, col) {
+				if (err) {
+				
+					// fail
+				    logger.error("Can't find the images collection", err);
+				    mongoStatus = false;
+				    res.header('Content-type', "application/json");
+				    res.header('Access-Control-Allow-Origin', '*');
+				    res.send([]);
+
+				} else {
+
+					// Yes
+					col.update( { email: req.body.email }, { $set: req.body }, {upsert:true}, function (err, docs) {
+				        if (err) {
+				            logger.error("OUps ", err);
+				            mongoStatus = false;
+				            docs = [];
+				        }
+				        res.render('party_thanks', partyData[0] );
+				    });
+				}
+			});
+
+		});
 	
-		// And print
-		partyData[0]['title'] 		= partyData[0]['partyTitle'];
-
-		// Building a password
-		var field1 = [ 'burning','hot','happy','dusty','red','blue','pinky','faster'];
-		var field2 = [ 'temple','camp','fire','water','bacon','playa','camp','hippie','ravers','rainbow'];
-		var randomWord1 = field1[Math.floor(Math.random()* field1.length )];
-		var randomWord2 = field2[Math.floor(Math.random()* field2.length )];
-		var partyCode = partyData[0]['ticketLimit']+'-'+randomWord1+'-'+randomWord2;
-
-		// data to save
-		req.body['partyCode']	= partyCode;
-
-		// data to print
-		partyData[0]['partyCode']	= partyCode;
-		partyData[0]['partyTAG']	= req.params.partyTAG;
-		partyData[0]['email']	    = req.body['email'];
-
-
-		soHowManyRegistrationWeGotForThatParty(req.params.partyTAG,function(howmany){
-			console.log('howmany',howmany);
-		});
-
-
-		// update
-		partyDB.collection('registration', function (err, col) {
-		    if (err) {
-		    
-		    	// fail
-		        logger.error("Can't find the images collection", err);
-		        mongoStatus = false;
-		        res.header('Content-type', "application/json");
-		        res.header('Access-Control-Allow-Origin', '*');
-		        res.send([]);
-
-		    } else {
-
-		    	// Yes
-		    	col.update( { email: req.body.email }, { $set: req.body }, {upsert:true}, function (err, docs) {
-		            if (err) {
-		                logger.error("OUps ", err);
-		                mongoStatus = false;
-		                docs = [];
-		            }
-		            res.render('party_thanks', partyData[0] );
-		        });
-		    }
-		});
-
+	}
+	else {
+	
+		//
+		// Sorry we are soldout
+		//
+		console.log('soldout');
+		 res.render('party_soldout', {} );
+	}
+	
 	});
 
-*/
+
+
+
 });
 
 
