@@ -100,53 +100,39 @@ app.get('/', function(req, res){
 });
 
 
+
+/* show a party page with a registration button */
 app.get('/party/:partyTAG', function(req, res){
-	// And print
-	var partyData =  get_party_info(req.params.partyTAG);
-	partyData['title'] = partyData['partyTitle'];
 
-   res.render('party_public_page', partyData );
-});
+	// get party Date in mongo
+	get_party_info(req.params.partyTAG,function(partyData){
 
+		// and print
+		partyData[0]['title'] = partyData[0]['partyTitle'];
+		res.render('party_public_page', partyData[0] );
 
-app.get('/party/registration/:partyTAG', function(req, res){
-	// And print
-	var partyData 			= get_party_info(req.params.partyTAG);
-	partyData['title'] 		= partyData['partyTitle'];
-	partyData['formSize']	= partyData.form.length;
-	
-   res.render('party_registration_page', partyData );
-});
-
-
-
-
-app.post('/party/registration/:partyTAG', function(req, res){
-	// And print
-	var partyData 			= get_party_info(req.params.partyTAG);
-	partyData['title'] 		= partyData['partyTitle'];
-	partyData['formSize']	= partyData.form.length;
-
-	// Building a password
-	var field1 = [ 'burning','hot','happy','dusty','red','blue','pinky','faster'];
-	var field2 = [ 'temple','camp','fire','water','bacon','playa','camp','hippie','ravers','rainbow'];
-	var randomWord1 = field1[Math.floor(Math.random()* field1.length )];
-	var randomWord2 = field2[Math.floor(Math.random()* field2.length )];
-	var partyCode = partyData['ticketLimit']+'-'+randomWord1+'-'+randomWord2;
-	
-	req.body['partyCode']	= partyCode;
-	partyData['partyCode']	= partyCode;
-	partyData['partyTAG']	= req.params.partyTAG;
-	partyData['email']	    = req.body['email'];
-
-
-	soHowManyRegistrationWeGotForThatParty(req.params.partyTAG,function(howmany){
-		console.log('howmany',howmany);
 	});
+});
 
 
-	// update
-    partyDB.collection(config.MONGO.collection, function (err, col) {
+
+
+app.get('/make', function(req, res){
+	res.render('party_make_one', {} );
+});
+
+
+
+/* Save a new party */
+app.post('/make', function(req, res){
+
+
+	var partyTAG = req.body.partyTAG;
+
+	req.body.ticketLimit = parseInt(req.body.ticketLimit);
+	//var req.body.ticketLimit = 541;
+	
+    partyDB.collection('parties', function (err, col) {
         if (err) {
         
         	// fail
@@ -159,16 +145,103 @@ app.post('/party/registration/:partyTAG', function(req, res){
         } else {
 
         	// Yes
-        	col.update( { email: req.body.email }, { $set: req.body }, {upsert:true}, function (err, docs) {
+        	col.update( { _id: partyTAG }, { $set: req.body }, {upsert:true}, function (err, docs) {
                 if (err) {
                     logger.error("OUps ", err);
                     mongoStatus = false;
                     docs = [];
                 }
-                res.render('party_thanks', partyData );
+                res.send('ok');
             });
         }
     });
+});
+
+
+
+
+/* show a registration paqe for a selected party */
+app.get('/party/registration/:partyTAG', function(req, res){
+
+	// get party Date in mongo
+	get_party_info(req.params.partyTAG, function(partyData){
+
+		//console.log(partyData[0])
+		//partyData[0]['partyTitle'] = "ok"
+		res.render('party_registration_page', partyData[0] );
+
+		//res.send(partyData[0]);
+
+	});
+});
+
+
+
+app.post('/party/registration/:partyTAG', function(req, res){
+
+	console.log('ok')
+
+	reduceOneTicket( req.params.partyTAG ,function(data){
+	
+		console.log('minus', data);
+	});
+	
+/*
+	// get party Date in mongo
+	get_party_info(req.params.partyTAG,function(partyData){
+	
+		// And print
+		partyData[0]['title'] 		= partyData[0]['partyTitle'];
+
+		// Building a password
+		var field1 = [ 'burning','hot','happy','dusty','red','blue','pinky','faster'];
+		var field2 = [ 'temple','camp','fire','water','bacon','playa','camp','hippie','ravers','rainbow'];
+		var randomWord1 = field1[Math.floor(Math.random()* field1.length )];
+		var randomWord2 = field2[Math.floor(Math.random()* field2.length )];
+		var partyCode = partyData[0]['ticketLimit']+'-'+randomWord1+'-'+randomWord2;
+
+		// data to save
+		req.body['partyCode']	= partyCode;
+
+		// data to print
+		partyData[0]['partyCode']	= partyCode;
+		partyData[0]['partyTAG']	= req.params.partyTAG;
+		partyData[0]['email']	    = req.body['email'];
+
+
+		soHowManyRegistrationWeGotForThatParty(req.params.partyTAG,function(howmany){
+			console.log('howmany',howmany);
+		});
+
+
+		// update
+		partyDB.collection('registration', function (err, col) {
+		    if (err) {
+		    
+		    	// fail
+		        logger.error("Can't find the images collection", err);
+		        mongoStatus = false;
+		        res.header('Content-type', "application/json");
+		        res.header('Access-Control-Allow-Origin', '*');
+		        res.send([]);
+
+		    } else {
+
+		    	// Yes
+		    	col.update( { email: req.body.email }, { $set: req.body }, {upsert:true}, function (err, docs) {
+		            if (err) {
+		                logger.error("OUps ", err);
+		                mongoStatus = false;
+		                docs = [];
+		            }
+		            res.render('party_thanks', partyData[0] );
+		        });
+		    }
+		});
+
+	});
+
+*/
 });
 
 
@@ -199,109 +272,39 @@ function partyData2htmlform(partyData) {
 }
 
 
-function get_party_info(partyID) {
 
-	var decom =  [];
+function get_party_info(partyID,callback) {
 
-	decom['decom2013'] = {
-			  _id : 'decom2013'
-			, partyTitle : "Brussels Decompression 2013"
-			, partyDescription : "Burners from Belgium are pleased to invite you to our first Brussels Burning Man Decompression®.The purpose of Decompression is to give Burning Man participants  the opportunity to re-capture the spirit of Burning Man by bringing them together with the art, music and exceptional people of the event. It is also an opportunity to introduce new people to burner culture."
-			, backgroundUrl: 'http://X2.bp.blogspot.com/-gQdn8R_wjUA/TlcruoDwCCI/AAAAAAABDAY/9PxjGlyur2k/s1600/Burning+Man+2010-6806.jpg'
-			, ticketLimit: 80
-			, form: [
-						{ 
-							id: 'email',
-							label: 'Email',
-							type: 'text',
-							size: '64',
-							placeholder: 'your email adress',
-						},
-						{ 
-							id: 'name',
-							label: 'PlayaName',
-							type: 'text',
-							size: '64',
-							placeholder: 'Playa Name / Nick Name',
-						},
-						{ 
-							id: 'phone',
-							label: 'Phone Number',
-							type: 'text',
-							size: '64',
-							placeholder: 'Your Phone Number',
-						},
-						{ 
-							id: 'burningman',
-							label: 'Did you already participated to Burning Man festival ?',
-							type: 'checkbox',
-							size: '64',
-							placeholder: 'Your Phone Number',
-						},
-						{ 
-							id: 'burningman',
-							label: 'Did you already participated to  urning Man regional event ?',
-							type: 'checkbox',
-							size: '64',
-							placeholder: 'Your Phone Number',
-						}
-				]
-	};
+    partyDB.collection('parties', function (err, col) {
+        if (err) {
+        
+        	// fail
+            logger.error("Can't find the images collection", err);
+            mongoStatus = false;
+            res.header('Content-type', "application/json");
+            res.header('Access-Control-Allow-Origin', '*');
+            res.send([]);
 
-	decom['decom2013staff'] = {
-			 _id : 'decom2013staff'
-			, partyTitle : "Brussels Decompression 2013"
-			, partyDescription : "Burners from Belgium are pleased to invite you to our first Brussels Burning Man Decompression®.The purpose of Decompression is to give Burning Man participants  the opportunity to re-capture the spirit of Burning Man by bringing them together with the art, music and exceptional people of the event. It is also an opportunity to introduce new people to burner culture."
-			, backgroundUrl: 'http://www.zastavki.com/pictures/2560x1600/2009/3D-graphics_Gray_Texture_016438_.jpg'
-			, ticketLimit: 20
-			, form: [
-						{ 
-							id: 'email',
-							label: 'Email',
-							type: 'text',
-							size: '64',
-							placeholder: 'your email adress',
-						},
-						{ 
-							id: 'name',
-							label: 'PlayaName',
-							type: 'text',
-							size: '64',
-							placeholder: 'Playa Name / Nick Name',
-						},
-						{ 
-							id: 'phone',
-							label: 'Phone Number',
-							type: 'text',
-							size: '64',
-							placeholder: 'Your Phone Number',
-						},
-						{ 
-							id: 'burningman',
-							label: 'Did you already participated to Burning Man festival ?',
-							type: 'checkbox',
-							size: '64',
-							placeholder: 'Your Phone Number',
-						},
-						{ 
-							id: 'burningman',
-							label: 'Did you already participated to  urning Man regional event ?',
-							type: 'checkbox',
-							size: '64',
-							placeholder: 'Your Phone Number',
-						}
-					]
-	};
+        } else {
 
-	return decom[partyID];
-
+        	// Yes
+        	col.find({ _id: partyID }).toArray(function (err, docs) {
+                if (err) {
+                    logger.error("OUps ", err);
+                    mongoStatus = false;
+                    docs = [];
+                }
+                callback(docs);
+            });
+        }
+    });
 }
 
 
 
 function soHowManyRegistrationWeGotForThatParty(partyTAG,callback) {
 
-    partyDB.collection(config.MONGO.collection, function (err, col) {
+    partyDB.collection('registration', function (err, col) {
         if (err) {
         
         	// fail
@@ -324,9 +327,36 @@ function soHowManyRegistrationWeGotForThatParty(partyTAG,callback) {
             });
         }
     });
-
 }
 
+
+
+function reduceOneTicket(partyTAG,callback) {
+
+    partyDB.collection('parties', function (err, col) {
+        if (err) {
+        	// fail
+
+
+        } else {
+
+        	// Yes
+		    	// Yes
+		    	col.update( { _id : partyTAG }, 
+		    				{ $inc: { ticketLimit: -1} }
+		    				
+		    				, {upsert:true}, function (err, docs) {
+		            if (err) {
+		                logger.error("OUps ", err);
+		                mongoStatus = false;
+		                docs = [];
+		            }
+		         	callback(docs); 
+		        });
+		        
+        }
+    });
+}
 
 
 
