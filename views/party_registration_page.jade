@@ -27,7 +27,7 @@ html(lang='en')
 					button.btn.btn-navbar pl
 		.container
 			#page
-				h3  . 
+				h3   #{partyTitle}
 				p Important : One ticket per email. If you wish to take several tiket, you need to fill this form several time with different email and save all the party-password.
 
 				form(method='POST', action='/party/registration/#{_id}')
@@ -43,23 +43,23 @@ html(lang='en')
 						label Quick Survey
 
 						label.checkbox
-							input(type='checkbox', name='virgin', value=true)
+							input(type='checkbox', name='virgin', value='1')
 							span I'm a virgin Burner
 
 						label.checkbox
-							input(type='checkbox', name='veteran', value=true)
+							input(type='checkbox', name='veteran', value='1')
 							span I'm a veteran Burner
 
 						label.checkbox
-							input(type='checkbox', name='bm2013', value=true)
+							input(type='checkbox', name='bm2013', value='1')
 							span I will go at Burning Man 2013 (Cargo Cult)
 
 						label.checkbox
-							input(type='checkbox', name='nowhere2013', value=true)
+							input(type='checkbox', name='nowhere2013', value='1')
 							span I will go at Nowhere Art festival 2013 (in Spain)
 
 						label.checkbox
-							input(type='checkbox', name='bmforeigner', value=true)
+							input(type='checkbox', name='bmforeigner', value='1')
 							span I come from a foreign country that Belgium
 
 						button(type='submit').btn  Save
