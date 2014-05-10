@@ -2,3 +2,4 @@ node_modules
 DEADJOE
 .idea
 .idea/*
+.idea/workspace.xml

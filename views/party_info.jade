@@ -40,6 +40,9 @@ html(lang='en')
                     td Registration URL
                     td#registration
 
+                tr
+                    td Bitcoin Wallet
+                    td#bitcoin
 
     script.
         var partyID = '#{params.partyID}';
@@ -51,7 +54,7 @@ html(lang='en')
            $('#ticketLimit').append(data.ticketLimit);
            $('#publicInfo').append( '<a href=/info/'+partyID+' >'+'/info/'+partyID+'</a>' );
            $('#registration').append( '<a href=/party/registration/'+partyID+' >'+'/party/registration/'+partyID+'</a>' );
-
+           $('#bitcoin').append( data.bitcoin );
         });
 
 
