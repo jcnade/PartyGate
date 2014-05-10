@@ -1,7 +1,7 @@
 {
   "name": "PartyGate",
   "description": "Ticket registration for Events and parties with limit control and QRcode CodeBar verification.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "dependencies": {
       "express": "3.x"
@@ -11,6 +11,5 @@
     , "mongodb": "*"
     , "mc": "*"
     , "log4js": "*"
-    , "mongodb": "*"
   }
 }

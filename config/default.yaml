@@ -1,3 +1,6 @@
+ADMIN:
+   password: 'make123'
+
 SERVER:
    port: 5000
 
