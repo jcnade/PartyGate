@@ -1,55 +1,61 @@
 doctype html
 html(lang='en')
-	head
-		title Make a party
-		meta(http-equiv="Content-Type", content="application/xhtml+xml; charset=utf-8")
-		meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
-		meta(name="apple-mobile-web-app-capable", content="yes")
-		meta(name="apple-mobile-web-app-status-bar-style", content="black")
-		link(rel="stylesheet", type="text/css", href="/bootstrap/css/bootstrap.min.css")
-		link(rel="stylesheet", type="text/css", href="/bootstrap/css/bootstrap-responsive.min.css")
-		link(rel="stylesheet", type="text/css", href="/partygate/css/partygate.css")
-		script(type="text/javascript", src="/partygate/js/jquery.js")
-		script(type="text/javascript", src="/partygate/js/d3.v3.min.js")
-		script(type="text/javascript", src="/bootstrap/js/bootstrap.min.js")
-	style.
-		body 
-		{
-		background-image: url('/partygate/img/gray.png');
-		background-repeat: no-repeat;
-		background-size: 100% 100%;
-		background-attachment: fixed;
-		} 
-	body
-		.navbar.navbar-inverse.navbar-fixed-top
-			.navbar-inner
-				.container
-					button.btn.btn-navbar pl
-		.container
-			#page
-				h3 form
-				form(method='POST', action='/make')
-					fieldset
-						legend Ticket registration
+    head
+        title Make a party
+        meta(http-equiv="Content-Type", content="application/xhtml+xml; charset=utf-8")
+        meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+        meta(name="apple-mobile-web-app-capable", content="yes")
+        meta(name="apple-mobile-web-app-status-bar-style", content="black")
+        link(rel="stylesheet", type="text/css", href="/bootstrap/css/bootstrap.min.css")
+        link(rel="stylesheet", type="text/css", href="/bootstrap/css/bootstrap-responsive.min.css")
+        link(rel="stylesheet", type="text/css", href="/partygate/css/partygate.css")
+        script(type="text/javascript", src="/partygate/js/jquery.js")
+        script(type="text/javascript", src="/partygate/js/d3.v3.min.js")
+        script(type="text/javascript", src="/bootstrap/js/bootstrap.min.js")
+    style.
+        body
+        {
+        background-image: url('/partygate/img/gray.png');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-attachment: fixed;
+        }
+    body
+        .navbar.navbar-inverse.navbar-fixed-top
+            .navbar-inner
+                .container
+                    button.btn.btn-navbar pl
+        .container
+            #page
+                h3 form
+                form(method='POST', action='/make')
+                    fieldset
+                        legend Ticket registration
 
-						label partyTAG ID
-						input(type='text', name='partyTAG', placeholder='partyXYZ')
+                        label partyTAG ID
+                        input(type='text', name='partyTAG', placeholder='partyXYZ', , style="width: 70px;")
 
-						label partyTitle
-						input(type='text', name='partyTitle', placeholder='Boris Disco Party')
+                        label partyTitle
+                        input(type='text', name='partyTitle', placeholder='Boris Disco Party', style="width: 400px;")
 
-						label ticketLimit 
-						input(type='text', name='ticketLimit', placeholder='50')
+                        label ticketLimit
+                        input(type='text', name='ticketLimit', placeholder='50', , style="width: 40px;")
 
-						label backgroundUrl
-						input(type='text', name='backgroundUrl', placeholder='http://..')
+                        label backgroundUrl
+                        input(type='text', name='backgroundUrl', placeholder='http://image.server.com/oneImage.gif' , style="width: 400px;")
 
-						label Description
-						textarea(name='partyDescription', cols='20', rows='6', placeholder='http://..')
+                        label Description
+                        textarea(name='partyDescription', cols='20', rows='6', placeholder='Explain what your event is about here', style="width: 400px;")
 
-						button(type='submit').btn  Save
+                        h4 Bitcoin
 
-	script
+                        label Public wallet:
+                        input(type='text', name='bitcoin', placeholder='1HuspeUjBaWRb1Jx7BMnL7x1DfcoSwCaci', style="width: 400px;" )
+
+
+                        button(type='submit').btn  Save
+
+    script
 
 
 

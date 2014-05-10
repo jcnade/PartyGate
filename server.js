@@ -191,6 +191,7 @@ app.get('/party/registration/:partyTAG', function(req, res){
 	// 1) get party Date in mongo
 	//
 	get_party_info(req.params.partyTAG, function(partyData){
+
 	if (partyData[0]){
 
 		//
@@ -214,10 +215,19 @@ app.get('/party/registration/:partyTAG', function(req, res){
 		}
 
 
-	}
-	else {res.send('nope');}});
+	} else {res.send('nope');}});
+
 });
 
+
+function page_billing(req,res){
+
+    console.log(req);
+    res.render('party_thanks', req );
+    //res.send('okkk');
+
+
+}
 
 
 app.post('/party/registration/:partyTAG', function(req, res){
@@ -237,16 +247,9 @@ app.post('/party/registration/:partyTAG', function(req, res){
 
 			if (data[0]) {
 
-				//
-				// The user get a ticket allready, we will tell it
-				//
-				console.log('not ok');
-				data[0]['title'] 		= partyData[0]['partyTitle'];
-				data[0]['partyTitle'] 	= partyData[0]['partyTitle'];
-				//data[0]['partyCode']	= partyCode;
-				//data[0]['partyTAG']		= req.params.partyTAG;
-				//data[0]['email']	    = req.body['email'];
-				res.render('party_thanks', data[0] );
+                req.partyInfo   = partyData[0];
+                req.userBillingInfo = data[0];
+                page_billing(req,res);
 				
 			}
 			else
@@ -301,8 +304,15 @@ app.post('/party/registration/:partyTAG', function(req, res){
 										logger.error("OUps ", err);
 										mongoStatus = false;
 										docs = [];
-									}
-									res.render('party_thanks', partyData[0] );
+                                        res.send('we got some error. please try later');
+
+									} else {
+                                        req.partyInfo   = partyData;
+                                        req.userBillingInfo = data;
+                                        page_billing(req,res);
+                                    }
+
+
 								});
 							}
 						});

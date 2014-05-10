@@ -10,7 +10,7 @@ Features :
 * Ticket Code Generator
 * limit controle
 * QRcode
-
+* Bitcoin support
 
 ### require
 
