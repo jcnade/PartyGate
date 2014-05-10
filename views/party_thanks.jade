@@ -12,6 +12,7 @@ html(lang='en')
         script(type="text/javascript", src="/partygate/js/jquery.js")
         script(type="text/javascript", src="/partygate/js/d3.v3.min.js")
         script(type="text/javascript", src="/bootstrap/js/bootstrap.min.js")
+        script(type="text/javascript", src="/qrcode/jquery.qrcode-0.7.0.min.js")
     style.
         body
         {
@@ -42,13 +43,23 @@ html(lang='en')
                         li Banque : Keytrade
                             li message:  #{userBillingInfo.email} + #{userBillingInfo.partyCode}
 
+                hr
+                h4 Paypal
+
+                form(action="https://www.paypal.com/cgi-bin/webscr", method="post", target="_top")
+                    input(type="hidden", name="cmd", value="_s-xclick")
+                    input(type="hidden", name="hosted_button_id", value="7Q6GC5QK6HPCY")
+                    input(type="image", src="https://www.paypalobjects.com/en_US/BE/i/btn/btn_buynowCC_LG.gif" border="0", name="submit", alt="PayPal")
+                    img(alt="", border="0", src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif", width="1", height="1")
+
+
+                hr
                 h4 Bitcoin
-                p Scan this code with yout bitcoin wallet and paid 0.06 bitcoin (or 20 euro).
-
                 center
-                    #bitcoin
+                    #bitcoinQR
+                    p#bitcoin
 
-        script.
+    script.
             function disableF5(e) { if (e.which == 116) e.preventDefault(); };
             // To disable f5
             $(document).bind("keydown", disableF5);
@@ -60,10 +71,52 @@ html(lang='en')
             console.log(partyID);
             $.getJSON( '/api/party/'+partyID,  function(data){
 
-                $('#bitcoin').append('<img width=150 src=https://blockchain.info/fr/qr?data='+data.bitcoin+' >');
+                $('#bitcoin').append(data.bitcoin);
+
+                var options =  {
+                            // render method: `'canvas'`, `'image'` or `'div'`
+                            render: 'canvas',
+                            // version range somewhere in 1 .. 40
+                            minVersion: 1,
+                            maxVersion: 40,
+                            // error correction level: `'L'`, `'M'`, `'Q'` or `'H'`
+                            ecLevel: 'L',
+                            // offset in pixel if drawn onto existing canvas
+                            left: 0,
+                            top: 0,
+                            // size in pixel
+                            size: 200,
+                            // code color or image element
+                            fill: '#000',
+                            // background color or image element, `null` for transparent background
+                            background: null,
+                            // content
+                            //text: 'bitcoin:'+data.bitcoin+'&amount=0.06&label=ticket&message=#{userBillingInfo.partyCode}',
+                            text: 'bitcoin:'+data.bitcoin+'?amount=0.0003&label=parano&message=#{userBillingInfo.partyCode}',
+                            //text: 'bitcoin:'+data.bitcoin,
+
+                            // corner radius relative to module width: 0.0 .. 0.5
+                            radius: 0,
+                            // quiet zone in modules
+                            quiet: 0,
+                            // modes
+                            // 0: normal
+                            // 1: label strip
+                            // 2: label box
+                            // 3: image strip
+                            // 4: image box
+                            mode: 0,
+                            mSize: 0.1,
+                            mPosX: 0.5,
+                            mPosY: 0.5,
+                            label: 'no label',
+                            fontname: 'sans',
+                            fontcolor: '#000',
+                            image: null
+                        }
+                $('#bitcoinQR').qrcode(options);
+
             });
-
-
 
 
 

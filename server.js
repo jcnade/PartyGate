@@ -222,7 +222,7 @@ app.get('/party/registration/:partyTAG', function(req, res){
 
 function page_billing(req,res){
 
-    console.log(req);
+    //console.log(req);
     res.render('party_thanks', req );
     //res.send('okkk');
 
@@ -232,7 +232,9 @@ function page_billing(req,res){
 
 app.post('/party/registration/:partyTAG', function(req, res){
 
-	console.log(req.body);
+    console.log('-------------------');
+    console.log(req.body);
+    console.log('-------------------');
 
 	//
 	// 1) get party data from mongo
@@ -247,6 +249,7 @@ app.post('/party/registration/:partyTAG', function(req, res){
 
 			if (data[0]) {
 
+                console.log('already a ticket')
                 req.partyInfo   = partyData[0];
                 req.userBillingInfo = data[0];
                 page_billing(req,res);
@@ -263,8 +266,9 @@ app.post('/party/registration/:partyTAG', function(req, res){
 					//
 					// Make a new ticket
 					//
-					console.log(partyData);
-					console.log('ok');
+                    console.log('NEW ticket')
+					console.log(partyData[0]);
+
 					reduceOneTicket( req.params.partyTAG ,function(data){
 
 						//
@@ -307,8 +311,8 @@ app.post('/party/registration/:partyTAG', function(req, res){
                                         res.send('we got some error. please try later');
 
 									} else {
-                                        req.partyInfo   = partyData;
-                                        req.userBillingInfo = data;
+                                        req.partyInfo   = partyData[0];
+                                        req.userBillingInfo = data[0];
                                         page_billing(req,res);
                                     }
 
