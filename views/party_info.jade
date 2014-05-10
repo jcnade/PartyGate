@@ -1,0 +1,58 @@
+doctype html
+html(lang='en')
+    head
+        title Make a party
+        meta(http-equiv="Content-Type", content="application/xhtml+xml; charset=utf-8")
+        meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+        meta(name="apple-mobile-web-app-capable", content="yes")
+        meta(name="apple-mobile-web-app-status-bar-style", content="black")
+        link(rel="stylesheet", type="text/css", href="/bootstrap/css/bootstrap.min.css")
+        link(rel="stylesheet", type="text/css", href="/bootstrap/css/bootstrap-responsive.min.css")
+        link(rel="stylesheet", type="text/css", href="/partygate/css/partygate.css")
+        script(type="text/javascript", src="/partygate/js/jquery.js")
+        script(type="text/javascript", src="/partygate/js/d3.v3.min.js")
+        script(type="text/javascript", src="/bootstrap/js/bootstrap.min.js")
+    style.
+        body
+        {
+        background-image: url('/partygate/img/gray.png');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-attachment: fixed;
+        }
+    body
+        #page
+            h1 Party Info
+
+            table.table
+                tr
+                    td url
+                    td#url
+                tr
+                    td ticket limit
+                    td#ticketLimit
+
+                tr
+                    td Public Info URL
+                    td#publicInfo
+
+                tr
+                    td Registration URL
+                    td#registration
+
+
+    script.
+        var partyID = '#{params.partyID}';
+        console.log(partyID);
+        $.getJSON( '/api/party/'+partyID,  function(data){
+            console.log(data);
+
+           $('#url').append(partyID);
+           $('#ticketLimit').append(data.ticketLimit);
+           $('#publicInfo').append( '<a href=/info/'+partyID+' >'+'/info/'+partyID+'</a>' );
+           $('#registration').append( '<a href=/party/registration/'+partyID+' >'+'/party/registration/'+partyID+'</a>' );
+
+        });
+
+
+

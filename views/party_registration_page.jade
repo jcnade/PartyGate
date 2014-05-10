@@ -1,70 +1,75 @@
 doctype html
 html(lang='en')
-	head
-		title Registration
-		meta(http-equiv="Content-Type", content="application/xhtml+xml; charset=utf-8")
-		meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
-		meta(name="apple-mobile-web-app-capable", content="yes")
-		meta(name="apple-mobile-web-app-status-bar-style", content="black")
-		link(rel="stylesheet", type="text/css", href="/bootstrap/css/bootstrap.min.css")
-		link(rel="stylesheet", type="text/css", href="/bootstrap/css/bootstrap-responsive.min.css")
-		link(rel="stylesheet", type="text/css", href="/partygate/css/partygate.css")
-		script(type="text/javascript", src="/partygate/js/jquery.js")
-		script(type="text/javascript", src="/partygate/js/d3.v3.min.js")
-		script(type="text/javascript", src="/bootstrap/js/bootstrap.min.js")
-	style
-		body 
-		{
-		background-image: url('/partygate/img/gray.png');
-		background-repeat: no-repeat;
-		background-size: 100% 100%;
-		background-attachment: fixed;
-		} 
-	body
-		.navbar.navbar-inverse.navbar-fixed-top
-			.navbar-inner
-				.container
-					button.btn.btn-navbar pl
-		.container
-			#page
-				h3   #{partyTitle}
-				p Important : One ticket per email. If you wish to take several tiket, you need to fill this form several time with different email and save all the party-password.
+    head
+        title Registration
+        meta(http-equiv="Content-Type", content="application/xhtml+xml; charset=utf-8")
+        meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+        meta(name="apple-mobile-web-app-capable", content="yes")
+        meta(name="apple-mobile-web-app-status-bar-style", content="black")
+        link(rel="stylesheet", type="text/css", href="/bootstrap/css/bootstrap.min.css")
+        link(rel="stylesheet", type="text/css", href="/bootstrap/css/bootstrap-responsive.min.css")
+        link(rel="stylesheet", type="text/css", href="/partygate/css/partygate.css")
+        script(type="text/javascript", src="/partygate/js/jquery.js")
+        script(type="text/javascript", src="/partygate/js/d3.v3.min.js")
+        script(type="text/javascript", src="/bootstrap/js/bootstrap.min.js")
+    style.
+        body
+        {
+        background-image: url('/partygate/img/gray.png');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-attachment: fixed;
+        }
+    body
+        .navbar.navbar-inverse.navbar-fixed-top
+            .navbar-inner
+                .container
+                    button.btn.btn-navbar pl
+        .container
+            #page
+                h3   #{partyTitle}
+                p Important : One ticket per email. If you wish to take several tiket, you need to fill this form several time with different email and save all the party-password.
 
-				form(method='POST', action='/party/registration/#{_id}')
-					fieldset
-						legend Ticket registration
+                form(method='POST', action='/party/registration/#{_id}')
+                    fieldset
+                        legend Ticket registration
 
-						label Name 
-						input(type='text',, name='name', placeholder='full name ')
+                        label Name
+                        input(type='text', name='name', placeholder='full name')
 
-						label Email
-						input(type='text', name='email',placeholder='email')
+                        label Email
+                        input(type='text', name='email', placeholder='your email')
 
-						label Quick Survey
+                        label Email (confirmation)
+                        input(type='text', name='email2', placeholder='confirm your email')
 
-						label.checkbox
-							input(type='checkbox', name='virgin', value='1')
-							span I'm a virgin Burner
 
-						label.checkbox
-							input(type='checkbox', name='veteran', value='1')
-							span I'm a veteran Burner
+                        //label Quick Survey
 
-						label.checkbox
-							input(type='checkbox', name='bm2013', value='1')
-							span I will go at Burning Man 2013 (Cargo Cult)
+                            //label.checkbox
+                                input(type='checkbox', name='virgin', value='1')
+                                span I'm a virgin Burner
 
-						label.checkbox
-							input(type='checkbox', name='nowhere2013', value='1')
-							span I will go at Nowhere Art festival 2013 (in Spain)
+                            label.checkbox
+                                input(type='checkbox', name='veteran', value='1')
+                                span I'm a veteran Burner
 
-						label.checkbox
-							input(type='checkbox', name='bmforeigner', value='1')
-							span I come from a foreign country that Belgium
+                            label.checkbox
+                                input(type='checkbox', name='bm2013', value='1')
+                                span I will go at Burning Man 2013 (Cargo Cult)
 
-						button(type='submit').btn  Save
+                            label.checkbox
+                                input(type='checkbox', name='nowhere2013', value='1')
+                                span I will go at Nowhere Art festival 2013 (in Spain)
 
-	script
+                            label.checkbox
+                                input(type='checkbox', name='bmforeigner', value='1')
+                                span I come from a foreign country that Belgium
+
+                        label
+                            button(type='submit').btn  Register
+
+    script.
 
 
 

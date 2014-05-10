@@ -24,6 +24,13 @@ var   express = require('express')
 /* Intro */
 logger.info("PartyGate Server");
 
+
+
+// API Routes
+var  v1 = require('./v1/mongo.js');
+
+
+
 /* Memcached connection */
 var memcached = new mc.Client('127.0.0.1:11211');
 memcached.connect(function() {
@@ -48,6 +55,9 @@ app.configure(function () {
     //app.use(express.staticCache()); //TODO connect.staticCache() is deprecated and will be removed in 3.0: use varnish or similar reverse proxy caches
     app.use(express.static(path.join(__dirname, 'public')));
 });
+
+
+
 
 /***********************************************************************************
  *
@@ -151,12 +161,26 @@ app.post('/make', function(req, res){
                     mongoStatus = false;
                     docs = [];
                 }
-                res.send('ok');
+
+                //
+                res.redirect('/info/'+partyTAG);
+                res.end();
+
             });
         }
     });
 });
 
+/* show a registration paqe for a selected party */
+app.get('/info/:partyID', function(req, res){
+    console.log(  req.params );
+    req.config = config;
+    res.render('party_info', req );
+});
+
+
+/* show a registration paqe for a selected party */
+app.get('/api/party/:partyID', v1.info );
 
 
 

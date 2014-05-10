@@ -26,7 +26,8 @@ Features :
     npm install
     node server.js
 
-### WebInterface :
+### Usage:
 
-   http://localhost:5000/
+   Create a new event:
+   http://localhost:5000/make
 

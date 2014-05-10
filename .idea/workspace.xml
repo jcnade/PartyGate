@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="666eeb3c-dd0f-41bd-bc4e-00ed6c7f12a1" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/pakage.json" afterPath="$PROJECT_DIR$/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/default.yaml" afterPath="$PROJECT_DIR$/config/default.yaml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/party_make_one.jade" afterPath="$PROJECT_DIR$/views/party_make_one.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/party_public_page.jade" afterPath="$PROJECT_DIR$/views/party_public_page.jade" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/party_registration_page.jade" afterPath="$PROJECT_DIR$/views/party_registration_page.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/party_soldout.jade" afterPath="$PROJECT_DIR$/views/party_soldout.jade" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/party_thanks.jade" afterPath="$PROJECT_DIR$/views/party_thanks.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.js" afterPath="$PROJECT_DIR$/server.js" />
     </list>
     <ignored path="PartyGate.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,31 +29,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="README.md" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="4" selection-start="421" selection-end="421" vertical-scroll-proportion="-16.153847" vertical-offset="0" max-vertical-offset="570">
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="MarkdownPreviewEditor">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="package.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="19" selection-start="339" selection-end="339" vertical-scroll-proportion="-7.5" vertical-offset="0" max-vertical-offset="300">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="server.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7155">
+            <state line="222" column="16" selection-start="5560" selection-end="5565" vertical-scroll-proportion="-14.148149" vertical-offset="2948" max-vertical-offset="7515">
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -64,10 +40,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="party_make_one.jade" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/views/party_make_one.jade">
+      <file leaf-file-name="party_registration_page.jade" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/views/party_registration_page.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="79" selection-start="1471" selection-end="1471" vertical-scroll-proportion="0.6368961" vertical-offset="180" max-vertical-offset="1170">
+            <state line="69" column="28" selection-start="3122" selection-end="3122" vertical-scroll-proportion="0.8941878" vertical-offset="435" max-vertical-offset="1470">
               <folding />
             </state>
           </provider>
@@ -87,21 +63,24 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/config/default.yaml" />
         <option value="$PROJECT_DIR$/views/party_public_page.jade" />
-        <option value="$PROJECT_DIR$/views/party_registration_page.jade" />
         <option value="$PROJECT_DIR$/views/party_soldout.jade" />
-        <option value="$PROJECT_DIR$/views/party_thanks.jade" />
         <option value="$PROJECT_DIR$/views/party_make_one.jade" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/v1/mongo.js" />
+        <option value="$PROJECT_DIR$/config/default.yaml" />
+        <option value="$PROJECT_DIR$/server.js" />
+        <option value="$PROJECT_DIR$/views/party_info.jade" />
+        <option value="$PROJECT_DIR$/views/party_registration_page.jade" />
+        <option value="$PROJECT_DIR$/views/party_thanks.jade" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="233" />
-    <option name="y" value="191" />
-    <option name="width" value="1492" />
-    <option name="height" value="799" />
+    <option name="x" value="266" />
+    <option name="y" value="203" />
+    <option name="width" value="1481" />
+    <option name="height" value="800" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -171,6 +150,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="v1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PartyGate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PartyGate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -184,6 +177,38 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
   <component name="RunManager">
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
+      <method />
+    </configuration>
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="name" value="Dart" />
+      <option name="saveOutputToFile" value="false" />
+      <option name="showConsoleOnStdErr" value="false" />
+      <option name="showConsoleOnStdOut" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
+      <setting name="configLocationType" value="CONFIG_FILE" />
+      <setting name="settingsFile" value="" />
+      <setting name="serverType" value="INTERNAL" />
+      <setting name="preferredDebugBrowser" value="CHROME" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
+      <method />
+    </configuration>
     <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="">
       <browser start="false" url="" with-js-debugger="false" />
       <method />
@@ -217,7 +242,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="233" y="191" width="1492" height="799" extended-state="0" />
+    <frame x="266" y="203" width="1481" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -225,7 +250,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24745071" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24931507" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
@@ -256,33 +281,9 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="19" selection-start="339" selection-end="339" vertical-scroll-proportion="-7.5" vertical-offset="0" max-vertical-offset="300">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="4" selection-start="421" selection-end="421" vertical-scroll-proportion="-16.153847" vertical-offset="0" max-vertical-offset="570">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/party_public_page.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="12" selection-start="12" selection-end="12" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="630">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/party_registration_page.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="12" selection-start="12" selection-end="12" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1395">
           <folding />
         </state>
       </provider>
@@ -294,34 +295,74 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/default.yaml">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="22" selection-start="29" selection-end="29" vertical-scroll-proportion="0.021306818" vertical-offset="0" max-vertical-offset="704">
+        <state line="12" column="19" selection-start="339" selection-end="339" vertical-scroll-proportion="0.26745912" vertical-offset="0" max-vertical-offset="673">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/party_thanks.jade">
+    <entry file="file://$PROJECT_DIR$/views/party_make_one.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.19765739" vertical-offset="135" max-vertical-offset="960">
-          <folding>
-            <marker date="1399722988653" expanded="true" signature="-1:-1" placeholder="//..." />
-          </folding>
+        <state line="28" column="0" selection-start="1084" selection-end="1092" vertical-scroll-proportion="0.34732273" vertical-offset="180" max-vertical-offset="1170">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server.js">
+    <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="1368" max-vertical-offset="7155">
+        <state line="29" column="0" selection-start="428" selection-end="428" vertical-scroll-proportion="0.65413535" vertical-offset="0" max-vertical-offset="665">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/default.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="23" selection-start="31" selection-end="31" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/v1/mongo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="56" column="35" selection-start="1460" selection-end="1460" vertical-scroll-proportion="0.418637" vertical-offset="539" max-vertical-offset="1740">
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/party_make_one.jade">
+    <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="79" selection-start="1471" selection-end="1471" vertical-scroll-proportion="0.6368961" vertical-offset="180" max-vertical-offset="1170">
+        <state line="222" column="16" selection-start="5560" selection-end="5565" vertical-scroll-proportion="-14.148149" vertical-offset="2948" max-vertical-offset="7515">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/party_thanks.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="20" selection-start="1467" selection-end="1467" vertical-scroll-proportion="0.59210527" vertical-offset="225" max-vertical-offset="960">
+          <folding>
+            <marker date="1399729369825" expanded="true" signature="-1:-1" placeholder="//..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/party_info.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="39" selection-start="1462" selection-end="1462" vertical-scroll-proportion="0.8552632" vertical-offset="0" max-vertical-offset="960">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/party_registration_page.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="28" selection-start="3122" selection-end="3122" vertical-scroll-proportion="0.8941878" vertical-offset="435" max-vertical-offset="1470">
           <folding />
         </state>
       </provider>

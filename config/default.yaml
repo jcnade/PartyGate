@@ -1,3 +1,6 @@
+public:
+   hostname: 'localhost'
+
 ADMIN:
    password: 'make123'
 

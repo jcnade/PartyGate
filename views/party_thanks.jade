@@ -12,7 +12,7 @@ html(lang='en')
 		script(type="text/javascript", src="/partygate/js/jquery.js")
 		script(type="text/javascript", src="/partygate/js/d3.v3.min.js")
 		script(type="text/javascript", src="/bootstrap/js/bootstrap.min.js")
-	style
+	style.
 		body 
 		{
 		background-image: url('/partygate/img/gray.png');
@@ -42,7 +42,7 @@ html(lang='en')
 						li Banque : Keytrade
 							li message:  #{email} + #{partyCode}
 
-		script
+		script.
 			function disableF5(e) { if (e.which == 116) e.preventDefault(); };
 			// To disable f5
 			$(document).bind("keydown", disableF5);
