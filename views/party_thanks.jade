@@ -29,19 +29,25 @@ html(lang='en')
         .container
             #page
                 h3 #{partyInfo.partyTitle}
-                p Your Secret Party-Password is
-                h4 #{userBillingInfo.partyCode}
+                .hero-unit
+                    Your Secret Party-Password is
+                    h4 #{userBillingInfo.partyCode}
 
-                P Please save this code and keep it secret, you will need it at the gate.
-                P For activation, please send 20 euro at the bank account below.
+                    P Please save this code and keep it secret, you will need it at the gate.
+                    P For activation, please send 20 euro at the bank account below.
+
+
+                hr
+                h4 Bank Transfer
                 pre
                     ul
-                        li Price: 20 euro
-                        li IBAN: BE20 6511 4850 2356
-                        li BIC : KEYTBEBB
-                        li Nom: Holden
-                        li Banque : Keytrade
-                            li message:  #{userBillingInfo.email} + #{userBillingInfo.partyCode}
+                        li#price
+                        li#iban
+                        li#bic
+                        li#bank
+                        li#owner
+                        li Message: #{userBillingInfo.partyCode} - #{userBillingInfo.partyTAG}
+
 
                 hr
                 h4 Paypal
@@ -68,43 +74,40 @@ html(lang='en')
 
             var partyID = '#{partyInfo.partyTAG}';
 
+            //
+            //
+            //
             console.log(partyID);
             $.getJSON( '/api/party/'+partyID,  function(data){
 
+                //
+                // bank info
+                //
+                $('#price').append('IBAN: '+data.bank.price);
+                $('#iban').append('IBAN: '+data.bank.iban);
+                $('#bic').append('BIC: '+data.bank.bic);
+                $('#name').append('Bank Name: '+data.bank.name);
+                $('#recipient').append('recipient: '+data.bank.recipient);
+                $('#message').append('message: '+data.bank.recipient);
+
+                //
+                // bitcoin info
+                //
                 $('#bitcoin').append(data.bitcoin);
 
                 var options =  {
-                            // render method: `'canvas'`, `'image'` or `'div'`
                             render: 'canvas',
-                            // version range somewhere in 1 .. 40
                             minVersion: 1,
                             maxVersion: 40,
-                            // error correction level: `'L'`, `'M'`, `'Q'` or `'H'`
                             ecLevel: 'L',
-                            // offset in pixel if drawn onto existing canvas
                             left: 0,
                             top: 0,
-                            // size in pixel
                             size: 200,
-                            // code color or image element
                             fill: '#000',
-                            // background color or image element, `null` for transparent background
                             background: null,
-                            // content
-                            //text: 'bitcoin:'+data.bitcoin+'&amount=0.06&label=ticket&message=#{userBillingInfo.partyCode}',
                             text: 'bitcoin:'+data.bitcoin+'?amount=0.0003&label=parano&message=#{userBillingInfo.partyCode}',
-                            //text: 'bitcoin:'+data.bitcoin,
-
-                            // corner radius relative to module width: 0.0 .. 0.5
                             radius: 0,
-                            // quiet zone in modules
                             quiet: 0,
-                            // modes
-                            // 0: normal
-                            // 1: label strip
-                            // 2: label box
-                            // 3: image strip
-                            // 4: image box
                             mode: 0,
                             mSize: 0.1,
                             mPosX: 0.5,

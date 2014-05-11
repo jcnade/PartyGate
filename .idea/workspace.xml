@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="666eeb3c-dd0f-41bd-bc4e-00ed6c7f12a1" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/default.yaml" afterPath="$PROJECT_DIR$/config/default.yaml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/party_make_one.jade" afterPath="$PROJECT_DIR$/views/party_make_one.jade" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/party_thanks.jade" afterPath="$PROJECT_DIR$/views/party_thanks.jade" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.js" afterPath="$PROJECT_DIR$/server.js" />
     </list>
@@ -26,10 +28,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="server.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="server.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="314" column="70" selection-start="8334" selection-end="8334" vertical-scroll-proportion="0.50576603" vertical-offset="4403" max-vertical-offset="7725">
+            <state line="126" column="0" selection-start="3664" selection-end="3664" vertical-scroll-proportion="56.666668" vertical-offset="3420" max-vertical-offset="7725">
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -37,10 +39,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="party_thanks.jade" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="party_thanks.jade" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/party_thanks.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="71" column="14" selection-start="3092" selection-end="3092" vertical-scroll-proportion="0.0" vertical-offset="496" max-vertical-offset="1935">
+            <state line="38" column="0" selection-start="1695" selection-end="1695" vertical-scroll-proportion="0.14265537" vertical-offset="469" max-vertical-offset="1980">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="party_make_one.jade" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/party_make_one.jade">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="68" column="63" selection-start="3124" selection-end="3124" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1605">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="default.yaml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/default.yaml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="14" selection-start="55" selection-end="55" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
               <folding />
             </state>
           </provider>
@@ -62,23 +82,23 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/views/party_public_page.jade" />
         <option value="$PROJECT_DIR$/v1/mongo.js" />
-        <option value="$PROJECT_DIR$/config/default.yaml" />
         <option value="$PROJECT_DIR$/public/partygate/css/partygate.css" />
-        <option value="$PROJECT_DIR$/views/party_make_one.jade" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/views/party_registration_page.jade" />
         <option value="$PROJECT_DIR$/views/party_info.jade" />
         <option value="$PROJECT_DIR$/views/party_soldout.jade" />
-        <option value="$PROJECT_DIR$/views/party_thanks.jade" />
         <option value="$PROJECT_DIR$/server.js" />
+        <option value="$PROJECT_DIR$/config/default.yaml" />
+        <option value="$PROJECT_DIR$/views/party_make_one.jade" />
+        <option value="$PROJECT_DIR$/views/party_thanks.jade" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="199" />
-    <option name="y" value="241" />
-    <option name="width" value="1453" />
-    <option name="height" value="750" />
+    <option name="x" value="264" />
+    <option name="y" value="184" />
+    <option name="width" value="1480" />
+    <option name="height" value="826" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -254,7 +274,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="199" y="241" width="1453" height="750" extended-state="0" />
+    <frame x="264" y="184" width="1480" height="826" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -262,7 +282,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24761905" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19808088" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
@@ -326,26 +346,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/default.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="23" selection-start="31" selection-end="31" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/v1/mongo.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="56" column="35" selection-start="1460" selection-end="1460" vertical-scroll-proportion="0.418637" vertical-offset="539" max-vertical-offset="1740">
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/party_make_one.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="37" selection-start="2338" selection-end="2338" vertical-scroll-proportion="0.5625" vertical-offset="405" max-vertical-offset="1260">
-          <folding />
         </state>
       </provider>
     </entry>
@@ -373,13 +379,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/party_registration_page.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="0" selection-start="2016" selection-end="2016" vertical-scroll-proportion="0.4861111" vertical-offset="345" max-vertical-offset="1485">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/party_soldout.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="22" selection-start="730" selection-end="730" vertical-scroll-proportion="0.29500756" vertical-offset="0" max-vertical-offset="825">
@@ -387,19 +386,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/party_thanks.jade">
+    <entry file="file://$PROJECT_DIR$/views/party_registration_page.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="14" selection-start="3092" selection-end="3092" vertical-scroll-proportion="0.0" vertical-offset="496" max-vertical-offset="1935">
+        <state line="44" column="0" selection-start="2016" selection-end="2016" vertical-scroll-proportion="0.4876161" vertical-offset="345" max-vertical-offset="1485">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/default.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="14" selection-start="55" selection-end="55" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/party_make_one.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="68" column="63" selection-start="3124" selection-end="3124" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1605">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="314" column="70" selection-start="8334" selection-end="8334" vertical-scroll-proportion="0.50576603" vertical-offset="4403" max-vertical-offset="7725">
+        <state line="126" column="0" selection-start="3664" selection-end="3664" vertical-scroll-proportion="56.666668" vertical-offset="3420" max-vertical-offset="7725">
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/party_thanks.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="0" selection-start="1695" selection-end="1695" vertical-scroll-proportion="0.14265537" vertical-offset="469" max-vertical-offset="1980">
+          <folding />
         </state>
       </provider>
     </entry>

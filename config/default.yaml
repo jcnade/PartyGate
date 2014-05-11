@@ -2,7 +2,7 @@ public:
    hostname: 'localhost'
 
 ADMIN:
-   password: 'make123'
+   password: ''
 
 SERVER:
    port: 5000

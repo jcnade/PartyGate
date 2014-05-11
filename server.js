@@ -127,7 +127,7 @@ app.get('/party/:partyTAG', function(req, res){
 
 
 
-app.get('/make', function(req, res){
+app.get('/make/'+config.ADMIN.password, function(req, res){
 	res.render('party_make_one', {} );
 });
 

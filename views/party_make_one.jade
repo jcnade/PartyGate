@@ -29,11 +29,17 @@ html(lang='en')
             #page
                 h3 form
                 form(method='POST', action='/make')
+
+                    fieldset
+                        legend Create a Admin Access
+                        label password
+                        input(type='text', name='admin.password', placeholder='a password', style="width: 100px;")
+
                     fieldset
                         legend Ticket registration
 
                         label partyTAG ID
-                        input(type='text', name='partyTAG', placeholder='partyXYZ', , style="width: 70px;")
+                        input(type='text', name='partyTAG', placeholder='partyXYZ', style="width: 70px;")
 
                         label partyTitle
                         input(type='text', name='partyTitle', placeholder='Boris Disco Party', style="width: 400px;")
@@ -47,12 +53,29 @@ html(lang='en')
                         label Description
                         textarea(name='partyDescription', cols='20', rows='6', placeholder='Explain what your event is about here', style="width: 400px;")
 
-                        h4 Bitcoin
+                    fieldset
+                        legend Bank transfer
+
+                        label IBAN:
+                        input(type='text', name='bank.iban', placeholder='BExx xxxx xxxx xxxxx', style="width: 400px;" )
+
+                        label BIC:
+                        input(type='text', name='bank.bic', placeholder='KEYTBEBB', style="width: 400px;" )
+
+                        label Bank name:
+                        input(type='text', name='bank.name', placeholder='ING', style="width: 400px;" )
+
+                        label Owner:
+                        input(type='text', name='bank.recipient', placeholder='Cheri Bibi', style="width: 400px;" )
+
+
+                    fieldset
+                        legend Bitcoin
 
                         label Public wallet:
                         input(type='text', name='bitcoin', placeholder='1HuspeUjBaWRb1Jx7BMnL7x1DfcoSwCaci', style="width: 400px;" )
 
-
+                        label
                         button(type='submit').btn  Save
 
     script
