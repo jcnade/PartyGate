@@ -62,6 +62,19 @@ exports.info = function(req, res) {
 
 
 
+exports.members = function(req, res) {
+
+    console.log('members')
+
+    get_party_members(req.params.partyID,function(dataFromMongo){
+
+        console.log(dataFromMongo)
+        res.send(dataFromMongo);
+    });
+
+}
+
+
 
 function get_party_info(partyID,callback) {
 
@@ -78,7 +91,7 @@ function get_party_info(partyID,callback) {
         } else {
 
             // Yes
-            col.find({ _id: partyID }).toArray(function (err, docs) {
+            col.find({_id: partyID }).toArray(function (err, docs) {
                 if (err) {
                     logger.error("OUps ", err);
                     mongoStatus = false;
@@ -91,6 +104,37 @@ function get_party_info(partyID,callback) {
 }
 
 
+
+function get_party_members(partyID,callback) {
+
+    console.log('get_party_members')
+
+    partyDB.collection('registration', function (err, col) {
+        if (err) {
+
+            // fail
+            logger.error("Can't find the images collection", err);
+            mongoStatus = false;
+            res.header('Content-type', "application/json");
+            res.header('Access-Control-Allow-Origin', '*');
+            res.send([]);
+
+        } else {
+
+            // Yes
+            col.find( { } ).toArray(function (err, docs) {
+                console.log(docs)
+            //col.find({ 'partyTAG': partyID }).toArray(function (err, docs) {
+                if (err) {
+                    logger.error("OUps ", err);
+                    mongoStatus = false;
+                    docs = [];
+                }
+                callback(docs);
+            });
+        }
+    });
+}
 
 
 

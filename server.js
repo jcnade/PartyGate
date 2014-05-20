@@ -110,7 +110,6 @@ app.get('/', function(req, res){
 });
 
 
-
 /* show a party page with a registration button */
 app.get('/party/:partyTAG', function(req, res){
 
@@ -181,6 +180,11 @@ app.get('/info/:partyID', function(req, res){
 
 /* show a registration paqe for a selected party */
 app.get('/api/party/:partyID', v1.info );
+
+/* show a registration paqe for a selected party */
+app.get('/api/party/:partyID/members', v1.members );
+
+
 
 
 
