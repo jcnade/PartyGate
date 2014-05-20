@@ -28,23 +28,23 @@ html(lang='en')
         .container
             #page
                 h3   #{partyTitle}
-                p Important : One ticket per email. If you wish to take several tiket, you need to fill this form several time with different email and save all the party-password.
+                p
 
                 form(method='POST', action='/party/registration/#{_id}')
                     fieldset
                         legend Ticket registration
 
-                        label Name
+                        label Name/Nickname
                         input(type='text', name='name', placeholder='full name')
 
                         label Email
                         input(type='text', name='email', placeholder='your email')
 
-                        label Email (confirmation)
-                        input(type='text', name='email2', placeholder='confirm your email')
+                        //label Email (confirmation)
+                        //input(type='text', name='email2', placeholder='confirm your email')
 
-                        label Your Bitcoin wallet (facultatif)
-                        input(type='text', name='bitcoin', placeholder='1HuspeUjBaWRb1Jx7BMnL7x1DfcoSwCaci')
+                        //label Your Bitcoin wallet (facultatif)
+                        //input(type='text', name='bitcoin', placeholder='1HuspeUjBaWRb1Jx7BMnL7x1DfcoSwCaci')
 
 
                         //label Quick Survey

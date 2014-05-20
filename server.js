@@ -275,23 +275,37 @@ app.post('/party/registration/:partyTAG', function(req, res){
 						// And print The Password page
 						//
 						partyData[0]['title'] 		= partyData[0]['partyTitle'];
+
+						//
 						// Building a password
-						var field1 = [ 'burning','hot','happy','dusty','red','blue','pinky','faster'];
-						var field2 = [ 'temple','camp','fire','water','bacon','playa','camp','hippie','ravers','rainbow'];
+                        //
+						var field1 = [ 'nice','small', 'nice', 'tiny','hot', 'cold', 'green',  'super',  'big', 'evil', 'mega',  'extra', 'hot','happy','dusty','red','blue','pinky','faster'];
+						var field2 = [ 'boobies','computer','mouse','drive','art','bacon','stalin','satan','art','cyborg','machine','chick','rebot'];
 						var randomWord1 = field1[Math.floor(Math.random()* field1.length )];
 						var randomWord2 = field2[Math.floor(Math.random()* field2.length )];
 						var partyCode = partyData[0]['ticketLimit']+'-'+randomWord1+'-'+randomWord2;
+
+                        //
 						// data to save
-						req.body['partyCode']	= partyCode;
+						//
+                        req.body['partyCode']	= partyCode;
+
+						//
 						// data to print
-						partyData[0]['partyCode']	= partyCode;
+						//
+                        partyData[0]['partyCode']	= partyCode;
 						partyData[0]['partyTAG']	= req.params.partyTAG;
 						partyData[0]['email']	    = req.body['email'];
-						// save info
-						partyDB.collection('registration', function (err, col) {
+
+                        //
+						// save user registration info
+						//
+                        partyDB.collection('registration', function (err, col) {
 							if (err) {
-				
+
+                                //
 								// fail
+                                //
 								logger.error("Can't find the images collection", err);
 								mongoStatus = false;
 								res.header('Content-type', "application/json");
@@ -300,7 +314,9 @@ app.post('/party/registration/:partyTAG', function(req, res){
 
 							} else {
 
-								// add the user onthe registratuib table
+                                //
+								// add the user on the registratuib table
+                                //
 								req.body.partyTAG = req.params.partyTAG;
 
 								col.update( { email: req.body.email }, { $set: req.body }, {upsert:true}, function (err, docs) {
@@ -312,7 +328,7 @@ app.post('/party/registration/:partyTAG', function(req, res){
 
 									} else {
                                         req.partyInfo   = partyData[0];
-                                        req.userBillingInfo = data[0];
+                                        req.userBillingInfo = partyData[0];
                                         page_billing(req,res);
                                     }
 

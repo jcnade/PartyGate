@@ -29,41 +29,34 @@ html(lang='en')
         .container
             #page
                 h3 #{partyInfo.partyTitle}
-                .hero-unit
-                    Your Secret Party-Password is
-                    h4 #{userBillingInfo.partyCode}
+                .div Votre code secret est &nbsp;
+                    b #{userBillingInfo.partyCode}
 
-                    P Please save this code and keep it secret, you will need it at the gate.
-                    P For activation, please send 20 euro at the bank account below.
+                P Notez lee code et présentez le à l'entrer. Valable pour une personne uniquement.
 
-
-                hr
-                h4 Bank Transfer
-                pre
-                    ul
-                        li#price
-                        li#iban
-                        li#bic
-                        li#bank
-                        li#owner
-                        li Message: #{userBillingInfo.partyCode} - #{userBillingInfo.partyTAG}
+                //
+                    hr
+                    h4 Bank Transfer
+                    pre
+                        ul
+                            li#price
+                            li#iban
+                            li#bic
+                            li#bank
+                            li#owner
+                            li Message: #{userBillingInfo.partyCode} - #{userBillingInfo.partyTAG}
 
 
-                hr
-                h4 Paypal
-
-                form(action="https://www.paypal.com/cgi-bin/webscr", method="post", target="_top")
-                    input(type="hidden", name="cmd", value="_s-xclick")
-                    input(type="hidden", name="hosted_button_id", value="7Q6GC5QK6HPCY")
-                    input(type="image", src="https://www.paypalobjects.com/en_US/BE/i/btn/btn_buynowCC_LG.gif" border="0", name="submit", alt="PayPal")
-                    img(alt="", border="0", src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif", width="1", height="1")
+                    hr
+                    h4 Paypal
 
 
-                hr
-                h4 Bitcoin
-                center
-                    #bitcoinQR
-                    p#bitcoin
+
+                    hr
+                    h4 Bitcoin
+                    center
+                        #bitcoinQR
+                        p#bitcoin
 
     script.
             function disableF5(e) { if (e.which == 116) e.preventDefault(); };

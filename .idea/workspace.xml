@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="666eeb3c-dd0f-41bd-bc4e-00ed6c7f12a1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/default.yaml" afterPath="$PROJECT_DIR$/config/default.yaml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/party_make_one.jade" afterPath="$PROJECT_DIR$/views/party_make_one.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/party_registration_page.jade" afterPath="$PROJECT_DIR$/views/party_registration_page.jade" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/party_thanks.jade" afterPath="$PROJECT_DIR$/views/party_thanks.jade" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.js" afterPath="$PROJECT_DIR$/server.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PartyGate.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,39 +28,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="server.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="server.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="126" column="0" selection-start="3664" selection-end="3664" vertical-scroll-proportion="56.666668" vertical-offset="3420" max-vertical-offset="7725">
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
+            <state line="282" column="82" selection-start="7042" selection-end="7042" vertical-scroll-proportion="-0.87539434" vertical-offset="4635" max-vertical-offset="7815">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="party_thanks.jade" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="party_thanks.jade" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/party_thanks.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="0" selection-start="1695" selection-end="1695" vertical-scroll-proportion="0.14265537" vertical-offset="469" max-vertical-offset="1980">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="party_make_one.jade" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/party_make_one.jade">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="68" column="63" selection-start="3124" selection-end="3124" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1605">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="default.yaml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/default.yaml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="14" selection-start="55" selection-end="55" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
+            <state line="31" column="49" selection-start="1434" selection-end="1434" vertical-scroll-proportion="-7.8" vertical-offset="270" max-vertical-offset="1875">
               <folding />
             </state>
           </provider>
@@ -84,21 +64,21 @@
         <option value="$PROJECT_DIR$/v1/mongo.js" />
         <option value="$PROJECT_DIR$/public/partygate/css/partygate.css" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/views/party_registration_page.jade" />
         <option value="$PROJECT_DIR$/views/party_info.jade" />
         <option value="$PROJECT_DIR$/views/party_soldout.jade" />
-        <option value="$PROJECT_DIR$/server.js" />
         <option value="$PROJECT_DIR$/config/default.yaml" />
         <option value="$PROJECT_DIR$/views/party_make_one.jade" />
+        <option value="$PROJECT_DIR$/views/party_registration_page.jade" />
+        <option value="$PROJECT_DIR$/server.js" />
         <option value="$PROJECT_DIR$/views/party_thanks.jade" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="264" />
-    <option name="y" value="184" />
-    <option name="width" value="1480" />
-    <option name="height" value="826" />
+    <option name="x" value="2439" />
+    <option name="y" value="101" />
+    <option name="width" value="1371" />
+    <option name="height" value="765" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -126,6 +106,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -168,55 +149,19 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="v1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PartyGate" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PartyGate" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PartyGate" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PartyGate" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="FullScreen" value="false" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
-      <option name="VMOptions" />
-      <option name="arguments" />
-      <option name="filePath" />
-      <option name="scope" value="ALL" />
-      <option name="testName" />
-      <method />
-    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -227,15 +172,23 @@
       <option name="showConsoleOnStdOut" value="false" />
       <method />
     </configuration>
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
       <setting name="configLocationType" value="CONFIG_FILE" />
       <setting name="settingsFile" value="" />
       <setting name="serverType" value="INTERNAL" />
       <setting name="preferredDebugBrowser" value="CHROME" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
@@ -274,23 +227,23 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="264" y="184" width="1480" height="826" extended-state="0" />
-    <editor active="true" />
+    <frame x="2439" y="101" width="1371" height="765" extended-state="0" />
+    <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19808088" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21407408" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -310,9 +263,9 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24761905" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -332,41 +285,129 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/views/party_public_page.jade">
+    <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="12" selection-start="12" selection-end="12" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="630">
+        <state line="282" column="82" selection-start="7042" selection-end="7042" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7965">
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/party_thanks.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="42" selection-start="1427" selection-end="1427" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="1875">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="129" column="14" selection-start="3677" selection-end="3681" vertical-scroll-proportion="0.0" vertical-offset="1935" max-vertical-offset="7725">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/party_thanks.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="0" selection-start="2095" selection-end="2095" vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="1905">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/default.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="14" selection-start="55" selection-end="55" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="375" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="129" column="14" selection-start="3677" selection-end="3681" vertical-scroll-proportion="0.0" vertical-offset="1935" max-vertical-offset="7725">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/party_thanks.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="0" selection-start="2095" selection-end="2095" vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="1905">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/default.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="14" selection-start="55" selection-end="55" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="375" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="126" column="0" selection-start="3664" selection-end="3664" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7725">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/party_thanks.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="0" selection-start="2095" selection-end="2095" vertical-scroll-proportion="0.0" vertical-offset="810" max-vertical-offset="1905">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/party_make_one.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="68" column="63" selection-start="3124" selection-end="3124" vertical-scroll-proportion="0.0" vertical-offset="1020" max-vertical-offset="1605" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/default.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="14" selection-start="55" selection-end="55" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="375" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="126" column="0" selection-start="3664" selection-end="3664" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7725">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/party_thanks.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="0" selection-start="2095" selection-end="2095" vertical-scroll-proportion="0.0" vertical-offset="810" max-vertical-offset="1905">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/party_make_one.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="68" column="63" selection-start="3124" selection-end="3124" vertical-scroll-proportion="0.0" vertical-offset="1020" max-vertical-offset="1605" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/default.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="14" selection-start="55" selection-end="55" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="375" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/party_public_page.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="12" selection-start="12" selection-end="12" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="630" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="19" selection-start="339" selection-end="339" vertical-scroll-proportion="0.26745912" vertical-offset="0" max-vertical-offset="673">
-          <folding />
-        </state>
+        <state line="12" column="19" selection-start="339" selection-end="339" vertical-scroll-proportion="0.26745912" vertical-offset="0" max-vertical-offset="673" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/v1/mongo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="35" selection-start="1460" selection-end="1460" vertical-scroll-proportion="0.418637" vertical-offset="539" max-vertical-offset="1740">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
+        <state line="56" column="35" selection-start="1460" selection-end="1460" vertical-scroll-proportion="0.418637" vertical-offset="539" max-vertical-offset="1740" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/partygate/css/partygate.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="58" selection-end="58" vertical-scroll-proportion="0.22970903" vertical-offset="0" max-vertical-offset="653">
-          <folding />
-        </state>
+        <state line="10" column="0" selection-start="58" selection-end="58" vertical-scroll-proportion="0.22970903" vertical-offset="0" max-vertical-offset="653" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="17" selection-start="258" selection-end="258" vertical-scroll-proportion="0.28616852" vertical-offset="0" max-vertical-offset="629">
-          <folding />
-        </state>
+        <state line="12" column="17" selection-start="258" selection-end="258" vertical-scroll-proportion="0.28616852" vertical-offset="0" max-vertical-offset="629" />
       </provider>
       <provider editor-type-id="MarkdownPreviewEditor">
         <state />
@@ -374,51 +415,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/party_info.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="45" selection-start="2119" selection-end="2119" vertical-scroll-proportion="0.0" vertical-offset="244" max-vertical-offset="1005">
-          <folding />
-        </state>
+        <state line="56" column="45" selection-start="2119" selection-end="2119" vertical-scroll-proportion="0.0" vertical-offset="244" max-vertical-offset="1005" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/party_soldout.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="22" selection-start="730" selection-end="730" vertical-scroll-proportion="0.29500756" vertical-offset="0" max-vertical-offset="825">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/party_registration_page.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="0" selection-start="2016" selection-end="2016" vertical-scroll-proportion="0.4876161" vertical-offset="345" max-vertical-offset="1485">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/default.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="14" selection-start="55" selection-end="55" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
-          <folding />
-        </state>
+        <state line="13" column="22" selection-start="730" selection-end="730" vertical-scroll-proportion="0.29500756" vertical-offset="0" max-vertical-offset="825" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/party_make_one.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="63" selection-start="3124" selection-end="3124" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1605">
+        <state line="68" column="63" selection-start="3124" selection-end="3124" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1605" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/default.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="14" selection-start="55" selection-end="55" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/party_registration_page.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="0" selection-start="1318" selection-end="1318" vertical-scroll-proportion="0.19292605" vertical-offset="345" max-vertical-offset="1485" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/party_thanks.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="49" selection-start="1434" selection-end="1434" vertical-scroll-proportion="-7.8" vertical-offset="270" max-vertical-offset="1875">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="126" column="0" selection-start="3664" selection-end="3664" vertical-scroll-proportion="56.666668" vertical-offset="3420" max-vertical-offset="7725">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/party_thanks.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="0" selection-start="1695" selection-end="1695" vertical-scroll-proportion="0.14265537" vertical-offset="469" max-vertical-offset="1980">
+        <state line="282" column="82" selection-start="7042" selection-end="7042" vertical-scroll-proportion="-0.87539434" vertical-offset="4635" max-vertical-offset="7815">
           <folding />
         </state>
       </provider>
