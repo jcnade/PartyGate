@@ -2,7 +2,7 @@ public:
    hostname: 'localhost'
 
 ADMIN:
-   password: ''
+   password: 'changeme123'
 
 SERVER:
    port: 5000
